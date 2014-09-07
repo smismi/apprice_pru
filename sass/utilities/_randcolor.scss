@@ -1,0 +1,12 @@
+$red: random(256)-1;
+$green: random(256)-1;
+$blue: random(256)-1;
+$alpha: random(100)/100;
+
+
+
+@function getRandomColor() {
+
+	@return unquote("rgba(#{$red}, #{$green}, #{$blue}, #{$alpha})");
+
+}

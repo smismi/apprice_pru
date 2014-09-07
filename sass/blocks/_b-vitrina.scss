@@ -1,0 +1,38 @@
+.b_vitrina {
+
+	background: #e38ca9;
+	overflow: hidden;
+
+}
+
+.b_vitrina__list {
+	font-size: 0;
+
+}
+.b_vitrina__item {
+
+
+	font-size: 13px;
+	display: inline-block;
+	width: 200px;
+	margin-left: 10px;
+	background: #f08;
+
+
+
+	&:nth-child(1) {
+		opacity: 1;
+	}
+
+	&:nth-child(2) {
+		opacity: 0.4;
+	}
+
+	&:nth-child(3) {
+		opacity: 0.6;
+	}
+
+	&:nth-child(4) {
+		opacity: 0.1;
+	}
+}
