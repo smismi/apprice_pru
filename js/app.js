@@ -32,10 +32,32 @@ require.config({
 require([
 
 	// Load our app module and pass it to our definition function
+	'jquery',
+	'underscore',
+	'backbone',
+	'marionette',
+	'modules/vitrina/index',
+	'modules/search/index'
 
-	'modules/userlist/index'
+], function($, _, Backbone, Marionette, Vitrina, Search){
 
-], function(Userlist){
+
+
+	var App = new Backbone.Marionette.Application();
+
+
+	App.addInitializer(function() {
+		App.vitrina = new Vitrina();
+	});
+
+
+	App.addInitializer(function() {
+		App.search = new Search();
+	});
+
+
+	App.start();
+
 
 
 });
