@@ -46,6 +46,18 @@ require([
 	var App = new Backbone.Marionette.Application();
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 	App.addInitializer(function(options) {
 		App.vitrina = new Vitrina(options);
 	});
@@ -59,14 +71,12 @@ require([
 		something: "some value",
 		another: "#some-selector"
 	};
+//
+//	App.addRegions({
+//		searchRegion: "#seacrh_section",
+//		vitrinaRegion: "#vitrina_section"
+//	});
 
-	App.addRegions({
-		searchRegion: "#seacrh_section",
-		vitrinaRegion: "#vitrina_section"
-	});
-
-
-	App.vitrinaRegion.show(new MyView());
 
 	App.start(options);
 

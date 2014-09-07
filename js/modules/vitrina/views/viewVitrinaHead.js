@@ -5,39 +5,42 @@
 define([
 	'jquery',
 	'underscore',
-	'backbone'
-
-], function($, _, Backbone, Events, Router, Model, Items){
-
-
-	var searchFormView = Backbone.View.extend({
+	'backbone',
+	'marionette'
 
 
-		el: $('#vitrina_header').get(0),
+], function($, _, Backbone, Marionette){
+
+
+	var VitrinaHeadView = Marionette.ItemView.extend({
+		el: '#vitrina_section',
+
+		template: false,
+
+		ui: {
+			paragraph: 'p',
+			button: '.my-button'
+		},
 
 		events: {
-			'click': 'sayHello'
+			'click @ui.button': 'clickedButton',
+			'click @ui.paragraph': 'clickedP'
 		},
 
-		initialize: function(){
-
-			console.log("view:vitrina:: init")
+		clickedButton: function() {
+			console.log('I clicked the button!');
 		},
-
-		sayHello: function(){
-
-			console.log("view:vitrina:: HELLO!!")
+		clickedP: function() {
+			console.log('I clicked the paragraph!');
 		}
-
-
-
-
-
 	});
 
 
+//	vitrinaHeadView.ui.paragraph.text();        // returns 'Hello World'
+//	vitrinaHeadView.ui.button.trigger('click'); // logs 'I clicked the button!'
 
-	return searchFormView;
+
+	return VitrinaHeadView;
 
 });
 
