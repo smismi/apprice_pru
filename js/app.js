@@ -60,6 +60,9 @@ require([
 
 	App.addInitializer(function(options) {
 		App.vitrina = new Vitrina(options);
+
+
+
 	});
 
 
@@ -67,15 +70,25 @@ require([
 		App.search = new Search(options);
 	});
 
+
+
 	var options = {
 		something: "some value",
 		another: "#some-selector"
 	};
-//
-//	App.addRegions({
-//		searchRegion: "#seacrh_section",
-//		vitrinaRegion: "#vitrina_section"
-//	});
+
+
+
+	App.addRegions({
+		searchRegion: "#seacrh_section",
+		vitrinaRegion: "#vitrina_section"
+	});
+
+
+
+	var vitrina = new Vitrina();
+	vitrina.ShowBooksList({ region: App.vitrinaRegion });
+
 
 
 	App.start(options);

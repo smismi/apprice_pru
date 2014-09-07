@@ -6,25 +6,39 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'marionette'
+	'marionette',
+	'modules/vitrina/models/modelVitrinaItem'
 
 
-], function($, _, Backbone, Marionette){
+
+], function($, _, Backbone, Marionette, ModelVitrinaItem){
 
 
-	var VitrinaListItem = Marionette.ItemView.extend({
-		tagName: "li",
-		template: _.template("<a href='<%-name%>'><%-name%></a>"),
+//	var modelVitrinaItem = new ModelVitrinaItem ({name: "Test Book"});
 
-		render: function(){
 
-			console.log("render item");
-			this.$el.html( this.template( this.model.toJSON() ) );
-			return this;
+	var VitrinaListItem = Backbone.Marionette.ItemView.extend({
+		tagName: 'li',
+//		template: "#vitrinaListItemView",
+		template: _.template('<strong><%= name %></strong>'),
+
+		initialize: function() {
+			this.listenTo(this.model, "change", this.render);
+		},
+
+		events: {
+			'click #btnDeleteBook': "deleteBook",
+			'click #btnEditBook': "editBook"
+		},
+
+		deleteBook: function() {
+			// do something to delete this book
+		},
+
+		editBook: function() {
+			// do something to edit this book
 		}
 	});
-
-
 
 	return VitrinaListItem;
 

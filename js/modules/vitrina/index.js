@@ -18,35 +18,33 @@ define([
 
 
 
+	var Vitrina = Backbone.Marionette.Controller.extend({
 
 
-	var Vitrina = function(options){
-		// Constructor for SomeModule
+		initialize: function (options) {
+
+		},
+
+		ShowBooksList: function (options) {
+			this.collection = new CollectionVitrinaItems([
+				{name: '1'},
+				{name: '2'},
+				{name: '3'},
+				{name: '4'},
+				{name: '5'}
+			]);
+
+			var booksView = new ViewVitrinaList({ collection: this.collection });
 
 
-		var collectionVitrinaItems = new CollectionVitrinaItems([
+//			options.region.show(booksView);
 
-			{name: 'peter'},
-			{name: 'john'},
-			{name: 'huilo'},
-			{name: 'putin'},
-			{name: 'lalalal'}
 
-		])
+		}
 
 
 
-		var viewVitrinaHead = new ViewVitrinaHead();
-		var viewVitrinaList = new ViewVitrinaList({
-			collection: collectionVitrinaItems
-		});
-
-		viewVitrinaList.render();
-
-
-	};
-
-
+	});
 
 
 
