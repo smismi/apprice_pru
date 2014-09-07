@@ -46,17 +46,29 @@ require([
 	var App = new Backbone.Marionette.Application();
 
 
-	App.addInitializer(function() {
-		App.vitrina = new Vitrina();
+	App.addInitializer(function(options) {
+		App.vitrina = new Vitrina(options);
 	});
 
 
-	App.addInitializer(function() {
-		App.search = new Search();
+	App.addInitializer(function(options) {
+		App.search = new Search(options);
+	});
+
+	var options = {
+		something: "some value",
+		another: "#some-selector"
+	};
+
+	App.addRegions({
+		searchRegion: "#seacrh_section",
+		vitrinaRegion: "#vitrina_section"
 	});
 
 
-	App.start();
+	App.vitrinaRegion.show(new MyView());
+
+	App.start(options);
 
 
 

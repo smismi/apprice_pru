@@ -17,7 +17,7 @@ define([
 
 
 
-	var Vitrina = function(){
+	var Vitrina = function(options){
 		// Constructor for SomeModule
 
 
