@@ -7,21 +7,26 @@ define([
 	'underscore',
 	'backbone',
 	'marionette',
-	'modules/vitrina/models/modelVitrinaItem'
+	'mustache',
+	'modules/vitrina/models/modelVitrinaItem',
+	'text!modules/vitrina/templates/vitrinaListItem'
 
 
 
-], function($, _, Backbone, Marionette, ModelVitrinaItem){
+], function($, _, Backbone, Marionette, Mustache, ModelVitrinaItem, template){
 
-
+//
 //	var modelVitrinaItem = new ModelVitrinaItem ({name: "Test Book"});
 
 
 	var VitrinaListItem = Backbone.Marionette.ItemView.extend({
 		tagName: 'li',
-//		template: "#vitrinaListItemView",
-		template: _.template('<strong><%= name %></strong>'),
+		template: function(item) {
 
+
+			return Mustache.to_html(template, item);
+
+		},
 		initialize: function() {
 			this.listenTo(this.model, "change", this.render);
 		},

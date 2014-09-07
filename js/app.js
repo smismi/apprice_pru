@@ -5,6 +5,8 @@ require.config({
 		underscore: 'libs/underscore',
 		backbone: 'libs/backbone-min',
 		marionette: 'libs/backbone.marionette.min',
+		text: 'libs/text',
+		mustache: 'libs/mustache',
 		localStorage: 'backbone.localStorage-min',
 		d3: 'libs/d3.v3.min'
 	},
