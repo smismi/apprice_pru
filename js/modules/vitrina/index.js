@@ -37,7 +37,7 @@ define([
 			var booksView = new ViewVitrinaList({ collection: this.collection });
 
 
-//			options.region.show(booksView);
+			options.region.show(booksView);
 
 
 		}
