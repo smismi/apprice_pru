@@ -7,13 +7,13 @@ define([
 	'underscore',
 	'backbone',
 	'marionette',
-	'mustache',
+	'handlebars',
 	'modules/vitrina/models/modelVitrinaItem',
 	'text!modules/vitrina/templates/vitrinaListItem'
 
 
 
-], function($, _, Backbone, Marionette, Mustache, ModelVitrinaItem, template){
+], function($, _, Backbone, Marionette, Handlebars, ModelVitrinaItem, template){
 
 //
 //	var modelVitrinaItem = new ModelVitrinaItem ({name: "Test Book"});
@@ -24,7 +24,11 @@ define([
 		template: function(item) {
 
 
-			return Mustache.to_html(template, item);
+
+//			return Mustache.to_html(template, item);
+			var _t = Handlebars.compile(template);
+			return _t(item);
+
 
 		},
 		initialize: function() {
@@ -37,6 +41,9 @@ define([
 		},
 
 		deleteBook: function() {
+
+
+
 			// do something to delete this book
 		},
 

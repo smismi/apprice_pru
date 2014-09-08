@@ -1,4 +1,4 @@
-<li> {{name}}
+<li> {{name}} -llll
 	<input type="submit" id="btnEditBook" value="edit"/>
 	<input type="submit" id="btnDeleteBook" value="delete"/>
 </li>

@@ -7,6 +7,7 @@ require.config({
 		marionette: 'libs/backbone.marionette.min',
 		text: 'libs/text',
 		mustache: 'libs/mustache',
+		handlebars: 'libs/handlebars',
 		localStorage: 'backbone.localStorage-min',
 		d3: 'libs/d3.v3.min'
 	},
