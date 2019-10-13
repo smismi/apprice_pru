@@ -9,7 +9,7 @@ define([
 	'marionette'
 
 
-], function($, _, Backbone, Marionette){
+], function ($, _, Backbone, Marionette) {
 
 
 	var VitrinaHeadView = Marionette.ItemView.extend({
@@ -27,10 +27,10 @@ define([
 			'click @ui.paragraph': 'clickedP'
 		},
 
-		clickedButton: function() {
+		clickedButton: function () {
 			console.log('I clicked the button!');
 		},
-		clickedP: function() {
+		clickedP: function () {
 			console.log('I clicked the paragraph!');
 		}
 	});
