@@ -11,34 +11,23 @@ define([
 	'modules/vitrina/views/viewVitrinaHead'
 
 //], function($, _, Backbone, Marionette, Userlist, Useritemview, Userlistview, Test01){
-], function($, _, Backbone, Marionette, ViewVitrinaHead){
+], function ($, _, Backbone, Marionette, ViewVitrinaHead) {
 
 
-
-
-
-	var Vitrina = function(options){
+	var Vitrina = function (options) {
 		// Constructor for SomeModule
 
 
 		var viewVitrinaHead = new ViewVitrinaHead();
 
 
-
 		debugger;
-
-
 
 
 	};
 
 
-
-
-
-
 	return Vitrina;
-
 
 
 });
