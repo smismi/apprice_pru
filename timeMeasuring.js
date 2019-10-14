@@ -2,9 +2,9 @@ const start = process.hrtime();
 
 const arr = [];
 
-for (let i = 0; i< 5000; i++) {
+for (let i = 0; i< 4000; i++) {
 	arr.push({
-		a: ~~(Math.random() * 5000)
+		a: ~~(Math.random() * 4000)
 	})
 }
 
